@@ -12,20 +12,16 @@ export default function NavScrollBehaviour() {
 
     let lastY = 0
 
-    async function init() {
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-      ScrollTrigger.create({
-        onUpdate: () => {
-          const y = window.scrollY
-          nav!.classList.toggle('scrolled', y > 60)
-          if (y > 400 && y > lastY) nav!.classList.add('hidden')
-          else nav!.classList.remove('hidden')
-          lastY = y
-        },
-      })
+    const onScroll = () => {
+      const y = window.scrollY
+      nav.classList.toggle('scrolled', y > 60)
+      if (y > 400 && y > lastY) nav.classList.add('hidden')
+      else nav.classList.remove('hidden')
+      lastY = y
     }
 
-    init()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return null
