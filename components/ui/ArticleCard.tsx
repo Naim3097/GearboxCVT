@@ -12,7 +12,7 @@ export default function ArticleCard({ article, index = 0 }: Props) {
   const cat = CATEGORY_MAP[article.category]
   const href = `/${article.category}/${article.slug}/`
 
-  const imgSrc = getArticleImage(article.category, article.slug)
+  const imgSrc = article.ogImage || getArticleImage(article.category, article.slug)
 
   return (
     <article

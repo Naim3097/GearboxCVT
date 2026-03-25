@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function ArticleHero({ article, category }: Props) {
-  const imgSrc = getArticleImage(article.category, article.slug, 1200, 80)
+  const imgSrc = article.ogImage || getArticleImage(article.category, article.slug, 1200, 80)
 
   return (
     <section
