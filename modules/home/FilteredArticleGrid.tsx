@@ -61,8 +61,9 @@ export default function FilteredArticleGrid({ articles }: Props) {
           y: 0,
           duration: 0.5,
           stagger: 0.06,
-          ease: 'customEaseOut',
-          clearProps: 'transform',
+          ease: 'power2.out',
+          immediateRender: false,
+          clearProps: 'transform,opacity',
         }
       )
     }
