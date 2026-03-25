@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { HERO_IMAGE } from '@/lib/images'
 
 // MOTION.md patterns: #9 hero parallax, #23 scroll indicator, #8 word reveal
 
@@ -92,8 +93,16 @@ export default function HeroSection() {
 
   return (
     <section ref={heroRef} className="hero" aria-label="Bahagian utama">
-      {/* Background — dark overlay (no image for now, pure dark) */}
-      <div ref={imgRef} className="hero-img-wrap bg-muted" />
+      {/* Background — Unsplash automotive hero image */}
+      <div ref={imgRef} className="hero-img-wrap">
+        <img
+          src={HERO_IMAGE}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
       <div className="hero-grad" aria-hidden="true" />
 
       <div

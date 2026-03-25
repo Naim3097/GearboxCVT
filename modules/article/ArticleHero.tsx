@@ -1,6 +1,7 @@
 import Breadcrumb from '@/components/layout/Breadcrumb'
 import type { Article } from '@/lib/mdx'
 import type { Category } from '@/lib/categories'
+import { getArticleImage } from '@/lib/images'
 
 interface Props {
   article: Article
@@ -8,12 +9,14 @@ interface Props {
 }
 
 export default function ArticleHero({ article, category }: Props) {
+  const imgSrc = getArticleImage(article.category, article.slug, 1200, 80)
+
   return (
     <section
-      className="bg-ink text-white pt-32 pb-16"
+      className="bg-ink text-white pt-32"
       aria-label="Kepala artikel"
     >
-      <div className="site-container">
+      <div className="site-container pb-12">
         <Breadcrumb
           items={[
             { label: category.label, href: `/${category.slug}/` },
@@ -42,6 +45,17 @@ export default function ArticleHero({ article, category }: Props) {
             <span>{article.readingTime}</span>
           </div>
         </div>
+      </div>
+
+      {/* Cover image */}
+      <div className="aspect-[21/9] max-h-[480px] overflow-hidden">
+        <img
+          src={imgSrc}
+          alt={article.title}
+          loading="eager"
+          decoding="async"
+          className="w-full h-full object-cover"
+        />
       </div>
     </section>
   )
