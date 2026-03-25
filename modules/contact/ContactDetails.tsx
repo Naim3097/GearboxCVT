@@ -92,7 +92,7 @@ export default function ContactDetails() {
               rel="noopener noreferrer"
               className="text-sm text-muted/50 hover:text-accent transition-colors text-center px-4"
             >
-              <span className="block text-3xl mb-3">📍</span>
+              <span className="block text-sm font-medium text-white/50 mb-2">Lokasi</span>
               GF LOT 184107, Shah Alam<br />
               <span className="underline underline-offset-2">Buka dalam Google Maps →</span>
             </a>

@@ -105,7 +105,7 @@ export default function StatsBar() {
           {items.map((item, i) => (
             <span key={i} className="mx-8 text-xs font-medium text-white/30 uppercase tracking-[0.25em]">
               {item}
-              {i < items.length - 1 && <i className="mx-8 not-italic text-accent">◆</i>}
+              {i < items.length - 1 && <i className="mx-8 not-italic text-accent/40">·</i>}
             </span>
           ))}
         </div>
