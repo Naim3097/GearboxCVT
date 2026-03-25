@@ -20,14 +20,18 @@ export default function ArticleGrid({ category, articles }: Props) {
       gsap.registerPlugin(ScrollTrigger)
 
       gsap.utils.toArray<HTMLElement>('.card').forEach((card, i) => {
-        gsap.to(card, {
-          opacity: 1,
-          y: 0,
-          duration: 0.667,
-          delay: i * 0.08,
-          ease: 'customEaseOut',
-          scrollTrigger: { trigger: card, start: 'top 90%' },
-        })
+        gsap.fromTo(card,
+          { opacity: 0, y: 40 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.667,
+            delay: i * 0.08,
+            ease: 'customEaseOut',
+            immediateRender: false,
+            scrollTrigger: { trigger: card, start: 'top 90%' },
+          }
+        )
       })
     }
     init()

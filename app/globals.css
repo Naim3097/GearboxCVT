@@ -327,8 +327,6 @@ body {
    ARTICLE CARD
 ───────────────────────────────────────── */
 .card {
-  opacity: 0;
-  transform: translateY(40px);
   border-radius: 8px;
   overflow: hidden;
   transition: box-shadow .3s var(--ease-out);

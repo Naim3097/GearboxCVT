@@ -12,17 +12,21 @@ export default function FooterAnimations() {
       gsap.registerPlugin(ScrollTrigger)
 
       gsap.utils.toArray<HTMLElement>('.f-col').forEach((col, i) => {
-        gsap.from(col, {
-          y: 30,
-          opacity: 0,
-          duration: 0.667,
-          delay: i * 0.08,
-          ease: 'customEaseOut',
-          scrollTrigger: {
-            trigger: '.footer-cols',
-            start: 'top 90%',
-          },
-        })
+        gsap.fromTo(col,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.667,
+            delay: i * 0.08,
+            ease: 'customEaseOut',
+            immediateRender: false,
+            scrollTrigger: {
+              trigger: '.footer-cols',
+              start: 'top 90%',
+            },
+          }
+        )
       })
     }
     init()
