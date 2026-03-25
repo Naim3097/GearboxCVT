@@ -21,14 +21,14 @@ export default function ArticleCard({ article, index = 0 }: Props) {
     >
       <Link href={href} className="block h-full no-underline">
         {/* Cover image */}
-        <div className="aspect-[16/9] overflow-hidden">
+        <div className="h-48 overflow-hidden">
           <img
             src={imgSrc}
             alt=""
             aria-hidden="true"
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
           />
         </div>
         <div className="p-6">

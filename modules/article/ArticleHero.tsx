@@ -47,14 +47,14 @@ export default function ArticleHero({ article, category }: Props) {
         </div>
       </div>
 
-      {/* Cover image */}
-      <div className="aspect-[21/9] max-h-[480px] overflow-hidden">
+      {/* Cover image — full bleed, fixed height, always fills width */}
+      <div className="w-full h-[420px] overflow-hidden">
         <img
           src={imgSrc}
           alt={article.title}
           loading="eager"
           decoding="async"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
       </div>
     </section>
